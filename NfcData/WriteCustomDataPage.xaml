@@ -1,0 +1,44 @@
+﻿<Page
+    x:Class="NfcData.WriteCustomDataPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NfcData"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <StackPanel Grid.Row="0" Margin="12">
+            <TextBlock Text="NFC Read/Write" Style="{StaticResource BaseTextBlockStyle}" Margin="12,0"/>
+            <TextBlock Text="write custom data" Margin="9,-8,0,0" Style="{StaticResource HeaderTextBlockStyle}" FontSize="50"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="1" Margin="12,0,12,0">
+            <Grid Margin="0,12,0,0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="200"/>
+                </Grid.ColumnDefinitions>
+
+                <TextBlock Text="First name:" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center"/>
+                <TextBox Grid.Column="1" x:Name="TextBoxFirstName"/>
+
+                <TextBlock Grid.Row="1" Text="Last name:" Style="{StaticResource BaseTextBlockStyle}" VerticalAlignment="Center" />
+                <TextBox Grid.Column="1" Grid.Row="1" x:Name="TextBoxLastName" />
+            </Grid>
+            
+            <Button Content="Start write" Tapped="WriteCustom_Tapped"/>
+            <TextBlock x:Name="StatusText" Text="" Style="{StaticResource BaseTextBlockStyle}"/>
+        </StackPanel>
+    </Grid>
+</Page>
